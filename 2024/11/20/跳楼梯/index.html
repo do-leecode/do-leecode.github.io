@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>跳楼梯 | Offer快来</title>
-  <meta name="keywords" content=" [object Object] ">
+  <meta name="keywords" content="">
   <meta name="description" content="跳楼梯 | Offer快来">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="手撕Leecode">
@@ -14,9 +14,8 @@
 <meta property="og:description" content="手撕Leecode">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-20T14:30:11.000Z">
-<meta property="article:modified_time" content="2024-11-22T09:41:42.754Z">
+<meta property="article:modified_time" content="2024-11-22T09:48:26.810Z">
 <meta property="article:author" content="reganzm">
-<meta property="article:tag" content="[object Object]">
 <meta name="twitter:card" content="summary">
 
 
@@ -193,6 +192,8 @@
     </div>
     <div>
         
+        <a 
+                                           class="friends">友链</a>
         
     </div>
 </div>
@@ -242,10 +243,6 @@
     <input id="tag-search" />
     <div class="tag-wrapper">
         
-            <li class="article-tag-list-item">
-                <i class="iconfont icon-tag"></i><a>[object Object]</a>
-            </li>
-        
     </div>
 
 </div>
@@ -260,7 +257,7 @@
         
         <a  class="全部文章 动态规划 "
            href="/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/"
-           data-tag="[object Object]"
+           data-tag=""
            data-author="" >
             <span class="post-title" title="跳楼梯">跳楼梯</span>
             <span class="post-date" title="2024-11-20 22:30:11">2024/11/20</span>
@@ -269,7 +266,7 @@
         
         <a  class="全部文章 数组 "
            href="/2024/11/20/%E4%B8%A4%E6%95%B0%E5%92%8C/"
-           data-tag="[object Object]"
+           data-tag=""
            data-author="" >
             <span class="post-title" title="两数和">两数和</span>
             <span class="post-date" title="2024-11-20 16:56:35">2024/11/20</span>
@@ -310,17 +307,10 @@
         </span>
         
         
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color1">[object Object]</a>
-            
-        </span>
-        
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-11-22 17:41:42'>2024-11-20 22:30</time>
+            发布时间 : <time class="date" title='最后更新: 2024-11-22 17:48:26'>2024-11-20 22:30</time>
         
     </div>
     <div class="article-meta">
@@ -377,7 +367,7 @@
     <p><span class="copy-title">字数:</span><span class="post-count">0</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="reganzm">reganzm</a></p>
     <p><span class="copy-title">发布时间:</span>2024-11-20, 22:30:11</p>
-    <p><span class="copy-title">最后更新:</span>2024-11-22, 17:41:42</p>
+    <p><span class="copy-title">最后更新:</span>2024-11-22, 17:48:26</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/" title="跳楼梯">http://do-leecode.github.io/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
@@ -451,6 +441,20 @@
 
         /*高亮代码块行号*/
         
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
 
         /*访问数量*/
         
@@ -475,6 +479,38 @@
 </script>
 
 <!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 18px 3px 15px 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
 
 <!--自定义样式设置-->
 <style>
