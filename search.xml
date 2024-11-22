@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>跳楼梯</title>
+      <link href="/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/"/>
+      <url>/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 动态规划 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> [object Object] </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>两数和</title>
+      <link href="/2024/11/20/%E4%B8%A4%E6%95%B0%E5%92%8C/"/>
+      <url>/2024/11/20/%E4%B8%A4%E6%95%B0%E5%92%8C/</url>
+      
+        <content type="html"><![CDATA[<p>题目：<br>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。<br>你可以按任意顺序返回答案。<br>示例 1：<br>输入：nums &#x3D; [2,7,11,15], target &#x3D; 9<br>输出：[0,1]<br>解释：因为 nums[0] + nums[1] &#x3D;&#x3D; 9 ，返回 [0, 1] 。<br>示例 2：<br>输入：nums &#x3D; [3,2,4], target &#x3D; 6<br>输出：[1,2]<br>示例 3：<br>输入：nums &#x3D; [3,3], target &#x3D; 6<br>输出：[0,1]</p><p>提示：<br>2 &lt;&#x3D; nums.length &lt;&#x3D; 104<br>-109 &lt;&#x3D; nums[i] &lt;&#x3D; 109<br>-109 &lt;&#x3D; target &lt;&#x3D; 109<br>只会存在一个有效答案</p><p>解题思路：<br>1.双循环，时间复杂度O(n^2)<br>2.单循环+hashmap，时间复杂度O(nlogn)</p><p>满足条件即可退出循环</p><p>rust code:</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">fn</span> <span class="title function_">two_sum</span>(nums: <span class="type">Vec</span>&lt;<span class="type">i32</span>&gt;, target: <span class="type">i32</span>) <span class="punctuation">-&gt;</span> <span class="type">Vec</span>&lt;<span class="type">i32</span>&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">map</span>: HashMap&lt;<span class="type">i32</span>, <span class="type">i32</span>&gt; = HashMap::<span class="title function_ invoke__">with_capacity</span>(nums.<span class="title function_ invoke__">len</span>());</span><br><span class="line">  <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="number">0</span>..nums.<span class="title function_ invoke__">len</span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">other</span> = target - nums[i];</span><br><span class="line">    <span class="keyword">if</span> map.<span class="title function_ invoke__">contains_key</span>(&amp;other) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">vec!</span>[*map.<span class="title function_ invoke__">get</span>(&amp;other).<span class="title function_ invoke__">unwrap</span>(),i <span class="keyword">as</span> <span class="type">i32</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> !map.<span class="title function_ invoke__">contains_key</span>(&amp;nums[i]) &#123;</span><br><span class="line">      map.<span class="title function_ invoke__">insert</span>(nums[i], i <span class="keyword">as</span> <span class="type">i32</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">vec!</span>[]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="/2024/11/20/%E4%B8%A4%E6%95%B0%E5%92%8C/rust.png" alt="Rust"></p><p>python3 code:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from typing import List</span><br><span class="line">class Solution:</span><br><span class="line">    def twoSum(self, nums: List[int], target: int) -&gt; List[int]:</span><br><span class="line">        mapping = &#123;&#125;</span><br><span class="line">        for i in range(0, len(nums)):</span><br><span class="line">            other = target - nums[i]</span><br><span class="line">            if mapping.get(other) is not None:</span><br><span class="line">                return [mapping.get(other), i]</span><br><span class="line">            else:</span><br><span class="line">                mapping[nums[i]] = i</span><br><span class="line">        return []</span><br></pre></td></tr></table></figure><p><img src="/2024/11/20/%E4%B8%A4%E6%95%B0%E5%92%8C/rust.png" alt="Python3"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数组 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> [object Object] </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
