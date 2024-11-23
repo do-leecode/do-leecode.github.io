@@ -16,7 +16,7 @@
 <meta property="og:image" content="http://do-leecode.github.io/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/rust.png">
 <meta property="og:image" content="http://do-leecode.github.io/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/python3.png">
 <meta property="article:published_time" content="2024-11-20T14:30:11.000Z">
-<meta property="article:modified_time" content="2024-11-22T14:28:21.381Z">
+<meta property="article:modified_time" content="2024-11-23T02:27:46.742Z">
 <meta property="article:author" content="reganzm">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://do-leecode.github.io/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/rust.png">
@@ -26,7 +26,7 @@
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
-<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+<link href="/css/hl_theme/github.css?v=1.1.0" rel="stylesheet">
 
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
@@ -378,7 +378,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-11-22 22:28:21'>2024-11-20 22:30</time>
+            发布时间 : <time class="date" title='最后更新: 2024-11-23 10:27:46'>2024-11-20 22:30</time>
         
     </div>
     <div class="article-meta">
@@ -397,6 +397,17 @@
             </span>
         </span>
         
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
         
     </div>
     
@@ -445,7 +456,7 @@
 <h3 id="rust代码"><a href="#rust代码" class="headerlink" title="rust代码"></a>rust代码</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">climb_stairs</span>(n: <span class="type">i32</span>) <span class="punctuation">-&gt;</span> <span class="type">i32</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">n</span> = n <span class="keyword">as</span> <span class="type">usize</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">dp</span> = <span class="built_in">vec!</span>[<span class="number">0</span>; <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">if</span> n &gt;= <span class="number">1</span> &#123;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> n &gt;= <span class="number">2</span> &#123;</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> n &gt;= <span class="number">3</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="number">3</span>..=n &#123;</span><br><span class="line">            dp[i % <span class="number">2</span>] = dp[(i - <span class="number">1</span>) % <span class="number">2</span>] + dp[(i - <span class="number">2</span>) % <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    dp[n % <span class="number">2</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/rust.png" alt="rust"></p>
-<h3 id="python3代码"><a href="#python3代码" class="headerlink" title="python3代码"></a>python3代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def climbStairs(self, n: int) -&gt; int:</span><br><span class="line">        dp = [0, 0]</span><br><span class="line">        if n &gt;= 1:</span><br><span class="line">            dp[1] = 1</span><br><span class="line">        if n &gt;= 2:</span><br><span class="line">            dp[0] = 2</span><br><span class="line">        for i in range(3,n+1):</span><br><span class="line">            dp[i % 2] = dp[(i - 1) % 2] + dp[(i - 2) % 2]</span><br><span class="line">        return dp[n % 2]</span><br></pre></td></tr></table></figure>
+<h3 id="python3代码"><a href="#python3代码" class="headerlink" title="python3代码"></a>python3代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">climbStairs</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        dp = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> n &gt;= <span class="number">1</span>:</span><br><span class="line">            dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> n &gt;= <span class="number">2</span>:</span><br><span class="line">            dp[<span class="number">0</span>] = <span class="number">2</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>,n+<span class="number">1</span>):</span><br><span class="line">            dp[i % <span class="number">2</span>] = dp[(i - <span class="number">1</span>) % <span class="number">2</span>] + dp[(i - <span class="number">2</span>) % <span class="number">2</span>]</span><br><span class="line">        <span class="keyword">return</span> dp[n % <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
 <p><img src="/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/python3.png" alt="python"></p>
 
       
@@ -464,13 +475,34 @@
     <p><span class="copy-title">字数:</span><span class="post-count">434</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="reganzm">reganzm</a></p>
     <p><span class="copy-title">发布时间:</span>2024-11-20, 22:30:11</p>
-    <p><span class="copy-title">最后更新:</span>2024-11-22, 22:28:21</p>
+    <p><span class="copy-title">最后更新:</span>2024-11-23, 10:27:46</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/" title="跳楼梯">http://do-leecode.github.io/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
     </p>
 </div>
 
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '',
+            clientSecret: '',
+            repo: 'do-leecode.github.io',
+            owner: 'do-leecode',
+            admin: ['do-leecode'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
 
 
 
@@ -538,20 +570,6 @@
 
         /*高亮代码块行号*/
         
-        $('pre code').each(function(){
-            var lines = $(this).text().trim().split('\n').length, widther='';
-            if (lines>99) {
-                widther = 'widther'
-            }
-            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
-            $(this).addClass('has-numbering ' + widther)
-                    .parent()
-                    .append($numbering);
-            for(var i=1;i<=lines;i++){
-                $numbering.append($('<li/>').text(i));
-            }
-        });
-        
 
         /*访问数量*/
         
@@ -576,38 +594,6 @@
 </script>
 
 <!--加入行号的高亮代码块样式-->
-
-<style>
-    pre{
-        position: relative;
-        margin-bottom: 24px;
-        border-radius: 10px;
-        border: 1px solid #e2dede;
-        background: #FFF;
-        overflow: hidden;
-    }
-    code.has-numbering{
-        margin-left: 30px;
-    }
-    code.has-numbering.widther{
-        margin-left: 35px;
-    }
-    .pre-numbering{
-        margin: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 20px;
-        padding: 18px 3px 15px 5px;
-        border-right: 1px solid #C3CCD0;
-        text-align: right;
-        color: #AAA;
-        background-color: #fafafa;
-    }
-    .pre-numbering.widther {
-        width: 35px;
-    }
-</style>
 
 <!--自定义样式设置-->
 <style>
