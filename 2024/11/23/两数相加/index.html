@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>跳楼梯 | Offer快来</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="跳楼梯 | Offer快来">
+  <title>两数相加 | Offer快来</title>
+  <meta name="keywords" content=" [object Object] ">
+  <meta name="description" content="两数相加 | Offer快来">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="题目：给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。 请你将两个数相加，并以相同形式返回一个表示和的链表。 你可以假设除了数字 0 之外，这两个数都不会以 0 开头。  示例1输入：l1 &#x3D; [2,4,3], l2 &#x3D; [5,6,4]输出：[7,0,8]解释：342 + 465 &#x3D; 807. 示">
 <meta property="og:type" content="article">
@@ -399,9 +399,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-跳楼梯" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-两数相加" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">跳楼梯</h1>
+        <h1 class="article-title">两数相加</h1>
     
     <div class="article-meta">
         
@@ -413,22 +413,29 @@
             
             <a  data-rel="leecode">leecode</a> > 
             
-            <a  data-rel="leecode&lt;---&gt;动态规划">动态规划</a> > 
+            <a  data-rel="leecode&lt;---&gt;链表">链表</a> > 
             
-            <a  data-rel="leecode&lt;---&gt;动态规划&lt;---&gt;0070:跳楼梯">0070:跳楼梯</a>
+            <a  data-rel="leecode&lt;---&gt;链表&lt;---&gt;0002:两数相加">0002:两数相加</a>
             
         </span>
         
         
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">[object Object]</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-11-23 10:27:46'>2024-11-20 22:30</time>
+            发布时间 : <time class="date" title='最后更新: 2024-11-23 23:00:59'>2024-11-23 10:39</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:434</span>
+        <span>字数:445</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -458,7 +465,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1%EF%BC%9A"><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-text">提示：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E4%BD%93%E6%80%9D%E8%B7%AF"><span class="toc-text">解体思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rust%E4%BB%A3%E7%A0%81"><span class="toc-text">rust代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python3%E4%BB%A3%E7%A0%81"><span class="toc-text">python3代码</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B1"><span class="toc-text">示例1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2%EF%BC%9A"><span class="toc-text">示例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-text">提示：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rust%E4%BB%A3%E7%A0%81"><span class="toc-text">rust代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-%E4%BB%A3%E7%A0%81"><span class="toc-text">python 代码</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -474,35 +481,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>假设你正在爬楼梯。需要 n 阶你才能到达楼顶。<br>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
-<h3 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h3><p>输入：n &#x3D; 2<br>输出：2<br>解释：有两种方法可以爬到楼顶。</p>
-<ol>
-<li>1 阶 + 1 阶</li>
-<li>2 阶<br>示例 2：</li>
-</ol>
-<p>输入：n &#x3D; 3<br>输出：3<br>解释：有三种方法可以爬到楼顶。</p>
-<ol>
-<li>1 阶 + 1 阶 + 1 阶</li>
-<li>1 阶 + 2 阶</li>
-<li>2 阶 + 1 阶</li>
-</ol>
-<h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><p>1 &lt;&#x3D; n &lt;&#x3D; 45</p>
-<h3 id="解体思路"><a href="#解体思路" class="headerlink" title="解体思路"></a>解体思路</h3><p>这是一道经典的动态规划题目，满足动态规划的四大条件：</p>
-<ul>
-<li>重叠子问题</li>
-<li>最优子结构</li>
-<li>有边界状态且状态满足无后效性</li>
-<li>有递推公式</li>
-</ul>
-<p>递推公式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">跳到第i格两种方式，首先跳到i-1格，下一次跳一格为第一种方式；跳到i-2格，</span><br><span class="line">下一次跳两格为第二种方式。跳到第i格可以分解为这两个子问题并求和。</span><br><span class="line">F(i) = F(i-1) + F(i-2) </span><br><span class="line">F(1) = 1</span><br><span class="line">f(2) = 2</span><br><span class="line">F(i)表示跳到第i阶楼梯的方法数</span><br></pre></td></tr></table></figure>
-
-<p>基于递推公式可以考虑使用dp[i+1]长度的数组存储递推过程中的状态，自下而上完成计算。</p>
-<h3 id="rust代码"><a href="#rust代码" class="headerlink" title="rust代码"></a>rust代码</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">climb_stairs</span>(n: <span class="type">i32</span>) <span class="punctuation">-&gt;</span> <span class="type">i32</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">n</span> = n <span class="keyword">as</span> <span class="type">usize</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">dp</span> = <span class="built_in">vec!</span>[<span class="number">0</span>; <span class="number">2</span>];</span><br><span class="line">    <span class="keyword">if</span> n &gt;= <span class="number">1</span> &#123;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> n &gt;= <span class="number">2</span> &#123;</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> n &gt;= <span class="number">3</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="number">3</span>..=n &#123;</span><br><span class="line">            dp[i % <span class="number">2</span>] = dp[(i - <span class="number">1</span>) % <span class="number">2</span>] + dp[(i - <span class="number">2</span>) % <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    dp[n % <span class="number">2</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/rust.png" alt="rust"></p>
-<h3 id="python3代码"><a href="#python3代码" class="headerlink" title="python3代码"></a>python3代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">climbStairs</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        dp = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> n &gt;= <span class="number">1</span>:</span><br><span class="line">            dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> n &gt;= <span class="number">2</span>:</span><br><span class="line">            dp[<span class="number">0</span>] = <span class="number">2</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>,n+<span class="number">1</span>):</span><br><span class="line">            dp[i % <span class="number">2</span>] = dp[(i - <span class="number">1</span>) % <span class="number">2</span>] + dp[(i - <span class="number">2</span>) % <span class="number">2</span>]</span><br><span class="line">        <span class="keyword">return</span> dp[n % <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/python3.png" alt="python"></p>
+        <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。</p>
+<p>请你将两个数相加，并以相同形式返回一个表示和的链表。</p>
+<p>你可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
+<p><img src="/2024/11/23/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/add_two_nums.jpg"></p>
+<h3 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h3><p>输入：l1 &#x3D; [2,4,3], l2 &#x3D; [5,6,4]<br>输出：[7,0,8]<br>解释：342 + 465 &#x3D; 807.</p>
+<h3 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h3><p>输入：l1 &#x3D; [0], l2 &#x3D; [0]<br>输出：[0]<br>示例 3：</p>
+<p>输入：l1 &#x3D; [9,9,9,9,9,9,9], l2 &#x3D; [9,9,9,9]<br>输出：[8,9,9,9,0,0,0,1]</p>
+<h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><p>每个链表中的节点数在范围 [1, 100] 内<br>0 &lt;&#x3D; Node.val &lt;&#x3D; 9<br>题目数据保证列表表示的数字不含前导零</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>遍历链表，按位加和，如果有进位，则需要加上进位。</p>
+<h3 id="rust代码"><a href="#rust代码" class="headerlink" title="rust代码"></a>rust代码</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">add_two_numbers</span>(</span><br><span class="line">    <span class="keyword">mut</span> l1: <span class="type">Option</span>&lt;<span class="type">Box</span>&lt;ListNode&gt;&gt;,</span><br><span class="line">    <span class="keyword">mut</span> l2: <span class="type">Option</span>&lt;<span class="type">Box</span>&lt;ListNode&gt;&gt;,</span><br><span class="line">) <span class="punctuation">-&gt;</span> <span class="type">Option</span>&lt;<span class="type">Box</span>&lt;ListNode&gt;&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">head</span> = <span class="type">Box</span>::<span class="title function_ invoke__">new</span>(ListNode::<span class="title function_ invoke__">new</span>(<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">tail</span> = head.<span class="title function_ invoke__">as_mut</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">sum</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">carray</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> l1.<span class="title function_ invoke__">is_some</span>() || l2.<span class="title function_ invoke__">is_some</span>() &#123;</span><br><span class="line">        <span class="keyword">if</span> l1.<span class="title function_ invoke__">is_some</span>() &#123;</span><br><span class="line">            sum += l1.<span class="title function_ invoke__">as_ref</span>().<span class="title function_ invoke__">unwrap</span>().val;</span><br><span class="line">            l1 = l1.<span class="title function_ invoke__">unwrap</span>().next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> l2.<span class="title function_ invoke__">is_some</span>() &#123;</span><br><span class="line">            sum += l2.<span class="title function_ invoke__">as_ref</span>().<span class="title function_ invoke__">unwrap</span>().val;</span><br><span class="line">            l2 = l2.<span class="title function_ invoke__">unwrap</span>().next;</span><br><span class="line">        &#125;</span><br><span class="line">        sum += carray;</span><br><span class="line">        carray = sum / <span class="number">10</span>;</span><br><span class="line">        sum = sum % <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">node</span> = ListNode::<span class="title function_ invoke__">new</span>(sum);</span><br><span class="line">        sum = <span class="number">0</span>;</span><br><span class="line">        tail.next = <span class="title function_ invoke__">Some</span>(<span class="type">Box</span>::<span class="title function_ invoke__">new</span>(node));</span><br><span class="line">        tail = &amp;<span class="keyword">mut</span> *tail.next.<span class="title function_ invoke__">as_mut</span>().<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> carray &gt; <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">tmp</span> = ListNode::<span class="title function_ invoke__">new</span>(carray);</span><br><span class="line">        tail.next = <span class="title function_ invoke__">Some</span>(<span class="type">Box</span>::<span class="title function_ invoke__">new</span>(tmp));</span><br><span class="line">    &#125;</span><br><span class="line">    head.next</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2024/11/23/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/rust.png"></p>
+<h3 id="python-代码"><a href="#python-代码" class="headerlink" title="python 代码"></a>python 代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">addTwoNumbers</span>(<span class="params">self, l1: <span class="type">Optional</span>[ListNode], l2: <span class="type">Optional</span>[ListNode]</span>) -&gt; <span class="type">Optional</span>[ListNode]:</span><br><span class="line">    head = ListNode(<span class="number">0</span>)</span><br><span class="line">    cusor = head</span><br><span class="line">    sums = <span class="number">0</span></span><br><span class="line">    carry = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> l1 <span class="keyword">or</span> l2:</span><br><span class="line">        <span class="keyword">if</span> l1:</span><br><span class="line">            sums += l1.val</span><br><span class="line">            l1 = l1.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">if</span> l2:</span><br><span class="line">            sums += l2.val</span><br><span class="line">            l2 = l2.<span class="built_in">next</span></span><br><span class="line">        sums += carry</span><br><span class="line">        carry = sums // <span class="number">10</span></span><br><span class="line">        sums %= <span class="number">10</span></span><br><span class="line">        cusor.<span class="built_in">next</span> = ListNode(val=sums)</span><br><span class="line">        cusor = cusor.<span class="built_in">next</span></span><br><span class="line">        sums = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> carry &gt; <span class="number">0</span>:</span><br><span class="line">        cusor.<span class="built_in">next</span> = ListNode(val=carry)</span><br><span class="line">    <span class="keyword">return</span> head.<span class="built_in">next</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2024/11/23/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/python.png"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 626692024@qq.com </span>
@@ -516,12 +507,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>跳楼梯</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">434</span></p>
+    <p><span class="copy-title">文章标题:</span>两数相加</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">445</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="reganzm">reganzm</a></p>
-    <p><span class="copy-title">发布时间:</span>2024-11-20, 22:30:11</p>
-    <p><span class="copy-title">最后更新:</span>2024-11-23, 10:27:46</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/" title="跳楼梯">http://do-leecode.github.io/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/</a>
+    <p><span class="copy-title">发布时间:</span>2024-11-23, 10:39:52</p>
+    <p><span class="copy-title">最后更新:</span>2024-11-23, 23:00:59</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/11/23/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" title="两数相加">http://do-leecode.github.io/2024/11/23/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
     </p>
