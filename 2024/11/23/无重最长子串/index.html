@@ -6,19 +6,17 @@
   <meta name="keywords" content="">
   <meta name="description" content="无重最长子串 | Offer快来">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="题目给定一个字符串 s ，请你找出其中不含有重复字符的最长子串的长度 示例 1:输入: s &#x3D; “abcabcbb”输出: 3解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。 示例 2:输入: s &#x3D; “bbbbb”输出: 1解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。 示例 3:输入: s &#x3D; “pwwkew”输出: 3解释: 因">
+<meta name="description" content="手撕Leecode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="无重最长子串">
-<meta property="og:url" content="http://do-leecode.github.io/2024/11/23/%E6%97%A0%E9%87%8D%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/index.html">
+<meta property="og:title" content="有效的括号">
+<meta property="og:url" content="http://do-leecode.github.io/2024/11/24/%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/index.html">
 <meta property="og:site_name" content="Offer快来">
-<meta property="og:description" content="题目给定一个字符串 s ，请你找出其中不含有重复字符的最长子串的长度 示例 1:输入: s &#x3D; “abcabcbb”输出: 3解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。 示例 2:输入: s &#x3D; “bbbbb”输出: 1解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。 示例 3:输入: s &#x3D; “pwwkew”输出: 3解释: 因">
+<meta property="og:description" content="手撕Leecode">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://do-leecode.github.io/2024/11/23/%E6%97%A0%E9%87%8D%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/rust.png">
-<meta property="article:published_time" content="2024-11-23T15:16:20.000Z">
-<meta property="article:modified_time" content="2024-11-23T16:43:03.187Z">
+<meta property="article:published_time" content="2024-11-24T01:32:40.000Z">
+<meta property="article:modified_time" content="2024-11-24T01:32:40.319Z">
 <meta property="article:author" content="reganzm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://do-leecode.github.io/2024/11/23/%E6%97%A0%E9%87%8D%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/rust.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -145,10 +143,18 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(4)</small>
+                <small>(20)</small>
             
         </div>
     </li>
+    
+        
+            
+        
+    
+        
+            
+        
     
         
             
@@ -189,7 +195,7 @@
         <div data-rel="leecode">
             <i class="fold iconfont icon-right"></i>
             leecode
-            <small>(4)</small>
+            <small>(6)</small>
         </div>
         
             <ul class="sub hide">
@@ -225,7 +231,7 @@
         <div data-rel="leecode&lt;---&gt;滑动窗口">
             <i class="fold iconfont icon-right"></i>
             滑动窗口
-            <small>(1)</small>
+            <small>(3)</small>
         </div>
         
             <ul class="sub hide">
@@ -235,6 +241,28 @@
         <div data-rel="leecode&lt;---&gt;滑动窗口&lt;---&gt;0003:无重复字符的最长子串">
             
             0003:无重复字符的最长子串
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="leecode&lt;---&gt;滑动窗口&lt;---&gt;0004:寻找两个正序数组的中位数">
+            
+            0004:寻找两个正序数组的中位数
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="leecode&lt;---&gt;滑动窗口&lt;---&gt;0005:最长回文子串">
+            
+            0005:最长回文子串
             <small>(1)</small>
         </div>
         
@@ -324,8 +352,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="4">
-<input type="hidden" id="yelog_site_word_count" value="1.7k">
+<input type="hidden" id="yelog_site_posts_number" value="20">
+<input type="hidden" id="yelog_site_word_count" value="2.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -384,6 +412,150 @@
     </div>
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="有效的括号">有效的括号</span>
+            <span class="post-date" title="2024-11-24 09:32:40">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0N%E4%B8%AA%E8%8A%82%E7%82%B9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="删除链表的倒数N个节点">删除链表的倒数N个节点</span>
+            <span class="post-date" title="2024-11-24 09:32:33">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="四数之和">四数之和</span>
+            <span class="post-date" title="2024-11-24 09:32:18">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="电话号码的字母组合">电话号码的字母组合</span>
+            <span class="post-date" title="2024-11-24 09:32:10">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="最接近的三数之和">最接近的三数之和</span>
+            <span class="post-date" title="2024-11-24 09:31:55">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="三数之和">三数之和</span>
+            <span class="post-date" title="2024-11-24 09:31:46">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="最长公共前缀">最长公共前缀</span>
+            <span class="post-date" title="2024-11-24 09:31:36">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E6%95%B0%E5%AD%97%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数字转罗马数字">数字转罗马数字</span>
+            <span class="post-date" title="2024-11-24 09:31:24">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="盛最多水的容器">盛最多水的容器</span>
+            <span class="post-date" title="2024-11-24 09:31:13">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="正则表达式匹配">正则表达式匹配</span>
+            <span class="post-date" title="2024-11-24 09:30:36">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E5%9B%9E%E6%96%87%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="回文数">回文数</span>
+            <span class="post-date" title="2024-11-24 09:30:28">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%95%B4%E6%95%B0-atoi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="字符串转整数(atoi)">字符串转整数(atoi)</span>
+            <span class="post-date" title="2024-11-24 09:30:17">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="整数反转">整数反转</span>
+            <span class="post-date" title="2024-11-24 09:30:03">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2024/11/24/Z%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Z字形变换">Z字形变换</span>
+            <span class="post-date" title="2024-11-24 09:29:51">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 leecode 滑动窗口 0005:最长回文子串 "
+           href="/2024/11/24/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="最长回文子串">最长回文子串</span>
+            <span class="post-date" title="2024-11-24 09:29:35">2024/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 leecode 滑动窗口 0004:寻找两个正序数组的中位数 "
+           href="/2024/11/24/%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="寻找两个正序数组的中位数">寻找两个正序数组的中位数</span>
+            <span class="post-date" title="2024-11-24 09:29:24">2024/11/24</span>
+        </a>
         
         
         <a  class="全部文章 leecode 滑动窗口 0003:无重复字符的最长子串 "
@@ -463,12 +635,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-11-24 00:43:03'>2024-11-23 23:16</time>
+            发布时间 : <time class="date" title='最后更新: 2024-11-25 22:12:08'>2024-11-23 23:16</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:467</span>
+        <span>字数:602</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -498,7 +670,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="toc-text">示例 2:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-3"><span class="toc-text">示例 3:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-text">提示：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rust%E5%AE%9E%E7%8E%B0"><span class="toc-text">rust实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python3-%E5%AE%9E%E7%8E%B0"><span class="toc-text">python3 实现</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-text">示例 1:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="toc-text">示例 2:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-3"><span class="toc-text">示例 3:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-text">提示：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rust%E5%AE%9E%E7%8E%B0"><span class="toc-text">rust实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rust%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96"><span class="toc-text">rust代码优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python3-%E5%AE%9E%E7%8E%B0"><span class="toc-text">python3 实现</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -519,9 +691,12 @@
 <h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2:"></a>示例 2:</h3><p>输入: s &#x3D; “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。</p>
 <h3 id="示例-3"><a href="#示例-3" class="headerlink" title="示例 3:"></a>示例 3:</h3><p>输入: s &#x3D; “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。</p>
 <h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><p>0 &lt;&#x3D; s.length &lt;&#x3D; 5 * 104<br>s 由英文字母、数字、符号和空格组成</p>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>采用滑动窗口，定义窗口左右边界分别为l,r，用一个set维护窗口中已有的字符，逐个比较字符，移动窗口，找出最大的值。<br>可以记录下最大取值时的左右边界，便于返回最长子串(题意没有这样要求，可以自行扩展)</p>
-<h3 id="rust实现"><a href="#rust实现" class="headerlink" title="rust实现"></a>rust实现</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">length_of_longest_substring</span>(s: <span class="type">String</span>) <span class="punctuation">-&gt;</span> <span class="type">i32</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> s.<span class="title function_ invoke__">is_empty</span>() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">map</span>: HashMap&lt;<span class="type">char</span>, <span class="type">usize</span>&gt; = HashMap::<span class="title function_ invoke__">with_capacity</span>(s.<span class="title function_ invoke__">len</span>());</span><br><span class="line">    <span class="keyword">let</span> (<span class="keyword">mut</span> l, <span class="keyword">mut</span> r) = (<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">max_length</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">max_l_r</span> = (<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">chars</span> = s.<span class="title function_ invoke__">chars</span>().collect::&lt;<span class="type">Vec</span>&lt;<span class="type">char</span>&gt;&gt;();</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">len</span> = s.<span class="title function_ invoke__">len</span>();</span><br><span class="line">    <span class="keyword">while</span> r &lt; len &#123;</span><br><span class="line">        <span class="keyword">if</span> map.<span class="title function_ invoke__">contains_key</span>(&amp;chars[r]) &#123;</span><br><span class="line">            <span class="keyword">let</span> <span class="variable">t_len</span> = r - l;</span><br><span class="line">            <span class="keyword">if</span> t_len &gt; max_length &#123;</span><br><span class="line">                max_length = t_len;</span><br><span class="line">                max_l_r = (l, r);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">let</span> <span class="variable">tr</span> = *map.<span class="title function_ invoke__">get</span>(&amp;chars[r]).<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line">            <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> l..=tr &#123;</span><br><span class="line">                map.<span class="title function_ invoke__">remove</span>(&amp;chars[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            map.<span class="title function_ invoke__">insert</span>(chars[r], r);</span><br><span class="line">            l = tr + <span class="number">1</span>;</span><br><span class="line">            r += <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            map.<span class="title function_ invoke__">insert</span>(chars[r], r);</span><br><span class="line">            <span class="built_in">println!</span>(<span class="string">&quot;&#123;&#125;&quot;</span>, chars[r]);</span><br><span class="line">            r += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//println!(&quot;&#123;:?&#125; &#123;l&#125; &#123;r&#125;&quot;,map);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> r != l &#123;</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">t_len</span> = r - l;</span><br><span class="line">        <span class="keyword">if</span> t_len &gt; max_length &#123;</span><br><span class="line">            max_length = t_len;</span><br><span class="line">            max_l_r = (l, r);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//println!(&quot;&#123;l&#125; &#123;r&#125; &#123;:?&#125;&quot;, &amp;s[max_l_r.0..max_l_r.1]);</span></span><br><span class="line">    max_length <span class="keyword">as</span> <span class="type">i32</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>采用滑动窗口，定义窗口左右边界分别为l,r，用一个map维护窗口中已有的字符，逐个比较字符，移动窗口，找出最大的值。时间复杂度为O(n*m),m为不重复子串平均长度。<br>可以记录下最大取值时的左右边界，便于返回最长子串(题意没有这样要求，可以自行扩展)</p>
+<h3 id="rust实现"><a href="#rust实现" class="headerlink" title="rust实现"></a>rust实现</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">length_of_longest_substring</span>(s: <span class="type">String</span>) <span class="punctuation">-&gt;</span> <span class="type">i32</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> s.<span class="title function_ invoke__">is_empty</span>() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">map</span>: HashMap&lt;<span class="type">char</span>, <span class="type">usize</span>&gt; = HashMap::<span class="title function_ invoke__">with_capacity</span>(<span class="number">64</span>);</span><br><span class="line">    <span class="keyword">let</span> (<span class="keyword">mut</span> l, <span class="keyword">mut</span> r) = (<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">max_length</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">max_l_r</span> = (<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">chars</span> = s.<span class="title function_ invoke__">chars</span>().collect::&lt;<span class="type">Vec</span>&lt;<span class="type">char</span>&gt;&gt;();</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">len</span> = s.<span class="title function_ invoke__">len</span>();</span><br><span class="line">    <span class="keyword">while</span> r &lt; len &#123;</span><br><span class="line">        <span class="keyword">if</span> map.<span class="title function_ invoke__">contains_key</span>(&amp;chars[r]) &#123;</span><br><span class="line">            <span class="keyword">let</span> <span class="variable">t_len</span> = r - l;</span><br><span class="line">            <span class="keyword">if</span> t_len &gt; max_length &#123;</span><br><span class="line">                max_length = t_len;</span><br><span class="line">                max_l_r = (l, r);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">let</span> <span class="variable">tr</span> = *map.<span class="title function_ invoke__">get</span>(&amp;chars[r]).<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line">            <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> l..=tr &#123;</span><br><span class="line">                map.<span class="title function_ invoke__">remove</span>(&amp;chars[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            map.<span class="title function_ invoke__">insert</span>(chars[r], r);</span><br><span class="line">            l = tr + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            map.<span class="title function_ invoke__">insert</span>(chars[r], r);</span><br><span class="line">            <span class="built_in">println!</span>(<span class="string">&quot;&#123;&#125;&quot;</span>, chars[r]);</span><br><span class="line">        &#125;</span><br><span class="line">        r += <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//println!(&quot;&#123;:?&#125; &#123;l&#125; &#123;r&#125;&quot;,map);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> r != l &#123;</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">t_len</span> = r - l;</span><br><span class="line">        <span class="keyword">if</span> t_len &gt; max_length &#123;</span><br><span class="line">            max_length = t_len;</span><br><span class="line">            max_l_r = (l, r);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//println!(&quot;&#123;l&#125; &#123;r&#125; &#123;:?&#125;&quot;, &amp;s[max_l_r.0..max_l_r.1]);</span></span><br><span class="line">    max_length <span class="keyword">as</span> <span class="type">i32</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/2024/11/23/%E6%97%A0%E9%87%8D%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/rust.png" alt="rust"></p>
+<h3 id="rust代码优化"><a href="#rust代码优化" class="headerlink" title="rust代码优化"></a>rust代码优化</h3><p>通过hashmap直接更新left边界，一次遍历，找到最长无重子串。时间复杂度O(n)。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">length_of_longest_substring</span>(s: <span class="type">String</span>) <span class="punctuation">-&gt;</span> <span class="type">i32</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">map</span>: HashMap&lt;<span class="type">char</span>, <span class="type">usize</span>&gt; = HashMap::<span class="title function_ invoke__">with_capacity</span>(<span class="number">128</span>);</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">chars</span> =s.<span class="title function_ invoke__">chars</span>().collect::&lt;<span class="type">Vec</span>&lt;<span class="type">char</span>&gt;&gt;();</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">left</span>:<span class="type">i32</span> = -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">len</span> = s.<span class="title function_ invoke__">len</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">max_length</span>:<span class="type">i32</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="variable">i</span>  <span class="keyword">in</span> <span class="number">0</span>..len&#123;</span><br><span class="line">        <span class="keyword">if</span> map.<span class="title function_ invoke__">contains_key</span>(&amp;chars[i])&#123;</span><br><span class="line">            left = left.<span class="title function_ invoke__">max</span>(*map.<span class="title function_ invoke__">get</span>(&amp;chars[i]).<span class="title function_ invoke__">unwrap</span>() <span class="keyword">as</span> <span class="type">i32</span>);</span><br><span class="line">        &#125;</span><br><span class="line">         map.<span class="title function_ invoke__">insert</span>(chars[i], i);</span><br><span class="line">         max_length = max_length.<span class="title function_ invoke__">max</span>(i <span class="keyword">as</span> <span class="type">i32</span>-left);</span><br><span class="line">    &#125;</span><br><span class="line">    max_length <span class="keyword">as</span> <span class="type">i32</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/11/23/%E6%97%A0%E9%87%8D%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/rust2.png" alt="rust"></p>
 <h3 id="python3-实现"><a href="#python3-实现" class="headerlink" title="python3 实现"></a>python3 实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
       
@@ -537,10 +712,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>无重最长子串</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">467</span></p>
+    <p><span class="copy-title">字数:</span><span class="post-count">602</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="reganzm">reganzm</a></p>
     <p><span class="copy-title">发布时间:</span>2024-11-23, 23:16:20</p>
-    <p><span class="copy-title">最后更新:</span>2024-11-24, 00:43:03</p>
+    <p><span class="copy-title">最后更新:</span>2024-11-25, 22:12:08</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/11/23/%E6%97%A0%E9%87%8D%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" title="无重最长子串">http://do-leecode.github.io/2024/11/23/%E6%97%A0%E9%87%8D%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。

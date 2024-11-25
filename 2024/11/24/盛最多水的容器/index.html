@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>两数之和 | Offer快来</title>
-  <meta name="keywords" content=" [object Object] ">
-  <meta name="description" content="两数之和 | Offer快来">
+  <title>盛最多水的容器 | Offer快来</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="盛最多水的容器 | Offer快来">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="手撕Leecode">
 <meta property="og:type" content="article">
@@ -611,43 +611,24 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-两数和" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-盛最多水的容器" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">两数之和</h1>
+        <h1 class="article-title">盛最多水的容器</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="leecode">leecode</a> > 
-            
-            <a  data-rel="leecode&lt;---&gt;数组">数组</a> > 
-            
-            <a  data-rel="leecode&lt;---&gt;数组&lt;---&gt;0001:两数之和">0001:两数之和</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color1">[object Object]</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-11-23 10:27:46'>2024-11-20 16:56</time>
+            发布时间 : <time class="date" title='最后更新: 2024-11-24 09:31:13'>2024-11-24 09:31</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:359</span>
+        <span>字数:0</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -677,7 +658,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1%EF%BC%9A"><span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2%EF%BC%9A"><span class="toc-text">示例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-3%EF%BC%9A"><span class="toc-text">示例 3：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-text">提示：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="toc-text">解题思路：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rust-code"><span class="toc-text">rust code:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python3-code"><span class="toc-text">python3 code:</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -693,19 +674,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。<br>你可以按任意顺序返回答案。</p>
-<h3 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h3><p>输入：nums &#x3D; [2,7,11,15], target &#x3D; 9<br>输出：[0,1]<br>解释：因为 nums[0] + nums[1] &#x3D;&#x3D; 9 ，返回 [0, 1] 。</p>
-<h3 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h3><p>输入：nums &#x3D; [3,2,4], target &#x3D; 6<br>输出：[1,2]</p>
-<h3 id="示例-3："><a href="#示例-3：" class="headerlink" title="示例 3："></a>示例 3：</h3><p>输入：nums &#x3D; [3,3], target &#x3D; 6<br>输出：[0,1]</p>
-<h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><p>2 &lt;&#x3D; nums.length &lt;&#x3D; 104<br>-109 &lt;&#x3D; nums[i] &lt;&#x3D; 109<br>-109 &lt;&#x3D; target &lt;&#x3D; 109<br>只会存在一个有效答案</p>
-<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><p>1.双循环，时间复杂度O(n^2)<br>2.单循环+hashmap，时间复杂度O(nlogn)</p>
-<p>满足条件即可退出循环</p>
-<h3 id="rust-code"><a href="#rust-code" class="headerlink" title="rust code:"></a>rust code:</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">fn</span> <span class="title function_">two_sum</span>(nums: <span class="type">Vec</span>&lt;<span class="type">i32</span>&gt;, target: <span class="type">i32</span>) <span class="punctuation">-&gt;</span> <span class="type">Vec</span>&lt;<span class="type">i32</span>&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">map</span>: HashMap&lt;<span class="type">i32</span>, <span class="type">i32</span>&gt; = HashMap::<span class="title function_ invoke__">with_capacity</span>(nums.<span class="title function_ invoke__">len</span>());</span><br><span class="line">  <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="number">0</span>..nums.<span class="title function_ invoke__">len</span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">other</span> = target - nums[i];</span><br><span class="line">    <span class="keyword">if</span> map.<span class="title function_ invoke__">contains_key</span>(&amp;other) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">vec!</span>[*map.<span class="title function_ invoke__">get</span>(&amp;other).<span class="title function_ invoke__">unwrap</span>(),i <span class="keyword">as</span> <span class="type">i32</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> !map.<span class="title function_ invoke__">contains_key</span>(&amp;nums[i]) &#123;</span><br><span class="line">      map.<span class="title function_ invoke__">insert</span>(nums[i], i <span class="keyword">as</span> <span class="type">i32</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">vec!</span>[]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/11/20/%E4%B8%A4%E6%95%B0%E5%92%8C/rust.png" alt="Rust"></p>
-<h3 id="python3-code"><a href="#python3-code" class="headerlink" title="python3 code:"></a>python3 code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        mapping = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(nums)):</span><br><span class="line">            other = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> mapping.get(other) <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                <span class="keyword">return</span> [mapping.get(other), i]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                mapping[nums[i]] = i</span><br><span class="line">        <span class="keyword">return</span> []</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/11/20/%E4%B8%A4%E6%95%B0%E5%92%8C/rust.png" alt="Python3"></p>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 626692024@qq.com </span>
     </div>
@@ -718,12 +687,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>两数之和</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">359</span></p>
+    <p><span class="copy-title">文章标题:</span>盛最多水的容器</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">0</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="reganzm">reganzm</a></p>
-    <p><span class="copy-title">发布时间:</span>2024-11-20, 16:56:35</p>
-    <p><span class="copy-title">最后更新:</span>2024-11-23, 10:27:46</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/11/20/%E4%B8%A4%E6%95%B0%E5%92%8C/" title="两数之和">http://do-leecode.github.io/2024/11/20/%E4%B8%A4%E6%95%B0%E5%92%8C/</a>
+    <p><span class="copy-title">发布时间:</span>2024-11-24, 09:31:13</p>
+    <p><span class="copy-title">最后更新:</span>2024-11-24, 09:31:13</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/11/24/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/" title="盛最多水的容器">http://do-leecode.github.io/2024/11/24/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
     </p>
