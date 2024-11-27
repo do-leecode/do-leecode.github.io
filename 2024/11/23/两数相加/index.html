@@ -135,8 +135,6 @@
 
 
 
-    <a class="more-menus">更多菜单</a>
-
 
 
 <ul>
@@ -358,11 +356,6 @@
         
             
             
-                <a class="dynamic-menu "
-                   target="_blank"
-                        
-                   href="https://github.com/reganzm">github</a>
-        
     </div>
     <div>
         
@@ -372,7 +365,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="20">
-<input type="hidden" id="yelog_site_word_count" value="2.7k">
+<input type="hidden" id="yelog_site_word_count" value="2.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -666,7 +659,7 @@
     </div>
     <div class="article-meta">
         
-        <span>字数:445</span>
+        <span>字数:435</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -681,17 +674,6 @@
         </span>
         
         
-        <span class="top-comment" title="跳转至评论区">
-            <a href="#comments">
-                评论:<span class="count-comment">
-                    <span class="spinner">
-                      <div class="cube1"></div>
-                      <div class="cube2"></div>
-                    </span>
-                </span>
-            </a>
-        </span>
-        
     </div>
     
     <div class="toc-ref">
@@ -703,8 +685,8 @@
     .left-col .switch-area {
         display: none;
     }
-    .toc-level-3 i,
-    .toc-level-3 ol {
+    .toc-level-4 i,
+    .toc-level-4 ol {
         display: none !important;
     }
 </style>
@@ -721,9 +703,60 @@
 <p>输入：l1 &#x3D; [9,9,9,9,9,9,9], l2 &#x3D; [9,9,9,9]<br>输出：[8,9,9,9,0,0,0,1]</p>
 <h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><p>每个链表中的节点数在范围 [1, 100] 内<br>0 &lt;&#x3D; Node.val &lt;&#x3D; 9<br>题目数据保证列表表示的数字不含前导零</p>
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>遍历链表，按位加和，如果有进位，则需要加上进位。</p>
-<h3 id="rust代码"><a href="#rust代码" class="headerlink" title="rust代码"></a>rust代码</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">add_two_numbers</span>(</span><br><span class="line">    <span class="keyword">mut</span> l1: <span class="type">Option</span>&lt;<span class="type">Box</span>&lt;ListNode&gt;&gt;,</span><br><span class="line">    <span class="keyword">mut</span> l2: <span class="type">Option</span>&lt;<span class="type">Box</span>&lt;ListNode&gt;&gt;,</span><br><span class="line">) <span class="punctuation">-&gt;</span> <span class="type">Option</span>&lt;<span class="type">Box</span>&lt;ListNode&gt;&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">head</span> = <span class="type">Box</span>::<span class="title function_ invoke__">new</span>(ListNode::<span class="title function_ invoke__">new</span>(<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">tail</span> = head.<span class="title function_ invoke__">as_mut</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">sum</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">carray</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> l1.<span class="title function_ invoke__">is_some</span>() || l2.<span class="title function_ invoke__">is_some</span>() &#123;</span><br><span class="line">        <span class="keyword">if</span> l1.<span class="title function_ invoke__">is_some</span>() &#123;</span><br><span class="line">            sum += l1.<span class="title function_ invoke__">as_ref</span>().<span class="title function_ invoke__">unwrap</span>().val;</span><br><span class="line">            l1 = l1.<span class="title function_ invoke__">unwrap</span>().next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> l2.<span class="title function_ invoke__">is_some</span>() &#123;</span><br><span class="line">            sum += l2.<span class="title function_ invoke__">as_ref</span>().<span class="title function_ invoke__">unwrap</span>().val;</span><br><span class="line">            l2 = l2.<span class="title function_ invoke__">unwrap</span>().next;</span><br><span class="line">        &#125;</span><br><span class="line">        sum += carray;</span><br><span class="line">        carray = sum / <span class="number">10</span>;</span><br><span class="line">        sum = sum % <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">node</span> = ListNode::<span class="title function_ invoke__">new</span>(sum);</span><br><span class="line">        sum = <span class="number">0</span>;</span><br><span class="line">        tail.next = <span class="title function_ invoke__">Some</span>(<span class="type">Box</span>::<span class="title function_ invoke__">new</span>(node));</span><br><span class="line">        tail = &amp;<span class="keyword">mut</span> *tail.next.<span class="title function_ invoke__">as_mut</span>().<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> carray &gt; <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">tmp</span> = ListNode::<span class="title function_ invoke__">new</span>(carray);</span><br><span class="line">        tail.next = <span class="title function_ invoke__">Some</span>(<span class="type">Box</span>::<span class="title function_ invoke__">new</span>(tmp));</span><br><span class="line">    &#125;</span><br><span class="line">    head.next</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="rust代码"><a href="#rust代码" class="headerlink" title="rust代码"></a>rust代码</h3><pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">add_two_numbers</span><span class="token punctuation">(</span>
+    <span class="token keyword">mut</span> l1<span class="token punctuation">:</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token class-name">ListNode</span><span class="token operator">>></span><span class="token punctuation">,</span>
+    <span class="token keyword">mut</span> l2<span class="token punctuation">:</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token class-name">ListNode</span><span class="token operator">>></span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token class-name">ListNode</span><span class="token operator">>></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> head <span class="token operator">=</span> <span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> tail <span class="token operator">=</span> head<span class="token punctuation">.</span><span class="token function">as_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> carray <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> l1<span class="token punctuation">.</span><span class="token function">is_some</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> l2<span class="token punctuation">.</span><span class="token function">is_some</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> l1<span class="token punctuation">.</span><span class="token function">is_some</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            sum <span class="token operator">+=</span> l1<span class="token punctuation">.</span><span class="token function">as_ref</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>val<span class="token punctuation">;</span>
+            l1 <span class="token operator">=</span> l1<span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span> l2<span class="token punctuation">.</span><span class="token function">is_some</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            sum <span class="token operator">+=</span> l2<span class="token punctuation">.</span><span class="token function">as_ref</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>val<span class="token punctuation">;</span>
+            l2 <span class="token operator">=</span> l2<span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        sum <span class="token operator">+=</span> carray<span class="token punctuation">;</span>
+        carray <span class="token operator">=</span> sum <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        sum <span class="token operator">=</span> sum <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> node <span class="token operator">=</span> <span class="token class-name">ListNode</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        tail<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tail <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token operator">*</span>tail<span class="token punctuation">.</span>next<span class="token punctuation">.</span><span class="token function">as_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> carray <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">let</span> tmp <span class="token operator">=</span> <span class="token class-name">ListNode</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span>carray<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tail<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    head<span class="token punctuation">.</span>next
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/2024/11/23/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/rust.png"></p>
-<h3 id="python-代码"><a href="#python-代码" class="headerlink" title="python 代码"></a>python 代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">addTwoNumbers</span>(<span class="params">self, l1: <span class="type">Optional</span>[ListNode], l2: <span class="type">Optional</span>[ListNode]</span>) -&gt; <span class="type">Optional</span>[ListNode]:</span><br><span class="line">    head = ListNode(<span class="number">0</span>)</span><br><span class="line">    cusor = head</span><br><span class="line">    sums = <span class="number">0</span></span><br><span class="line">    carry = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> l1 <span class="keyword">or</span> l2:</span><br><span class="line">        <span class="keyword">if</span> l1:</span><br><span class="line">            sums += l1.val</span><br><span class="line">            l1 = l1.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">if</span> l2:</span><br><span class="line">            sums += l2.val</span><br><span class="line">            l2 = l2.<span class="built_in">next</span></span><br><span class="line">        sums += carry</span><br><span class="line">        carry = sums // <span class="number">10</span></span><br><span class="line">        sums %= <span class="number">10</span></span><br><span class="line">        cusor.<span class="built_in">next</span> = ListNode(val=sums)</span><br><span class="line">        cusor = cusor.<span class="built_in">next</span></span><br><span class="line">        sums = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> carry &gt; <span class="number">0</span>:</span><br><span class="line">        cusor.<span class="built_in">next</span> = ListNode(val=carry)</span><br><span class="line">    <span class="keyword">return</span> head.<span class="built_in">next</span></span><br></pre></td></tr></table></figure>
+<h3 id="python-代码"><a href="#python-代码" class="headerlink" title="python 代码"></a>python 代码</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">addTwoNumbers</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> l1<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>ListNode<span class="token punctuation">]</span><span class="token punctuation">,</span> l2<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>ListNode<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span>ListNode<span class="token punctuation">]</span><span class="token punctuation">:</span>
+    head <span class="token operator">=</span> ListNode<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    cusor <span class="token operator">=</span> head
+    sums <span class="token operator">=</span> <span class="token number">0</span>
+    carry <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> l1 <span class="token keyword">or</span> l2<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> l1<span class="token punctuation">:</span>
+            sums <span class="token operator">+=</span> l1<span class="token punctuation">.</span>val
+            l1 <span class="token operator">=</span> l1<span class="token punctuation">.</span><span class="token builtin">next</span>
+        <span class="token keyword">if</span> l2<span class="token punctuation">:</span>
+            sums <span class="token operator">+=</span> l2<span class="token punctuation">.</span>val
+            l2 <span class="token operator">=</span> l2<span class="token punctuation">.</span><span class="token builtin">next</span>
+        sums <span class="token operator">+=</span> carry
+        carry <span class="token operator">=</span> sums <span class="token operator">//</span> <span class="token number">10</span>
+        sums <span class="token operator">%=</span> <span class="token number">10</span>
+        cusor<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> ListNode<span class="token punctuation">(</span>val<span class="token operator">=</span>sums<span class="token punctuation">)</span>
+        cusor <span class="token operator">=</span> cusor<span class="token punctuation">.</span><span class="token builtin">next</span>
+        sums <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">if</span> carry <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+        cusor<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> ListNode<span class="token punctuation">(</span>val<span class="token operator">=</span>carry<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> head<span class="token punctuation">.</span><span class="token builtin">next</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/2024/11/23/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/python.png"></p>
 
       
@@ -739,7 +772,7 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>两数相加</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">445</span></p>
+    <p><span class="copy-title">字数:</span><span class="post-count">435</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="reganzm">reganzm</a></p>
     <p><span class="copy-title">发布时间:</span>2024-11-23, 10:39:52</p>
     <p><span class="copy-title">最后更新:</span>2024-11-23, 23:00:59</p>
@@ -751,29 +784,48 @@
 
 
 
-    <div id="comments"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
-<script type="text/javascript">
-    $.getScript('/js/gitalk.js', function () {
-        var gitalk = new Gitalk({
-            clientID: '',
-            clientSecret: '',
-            repo: 'do-leecode.github.io',
-            owner: 'do-leecode',
-            admin: ['do-leecode'],
-            id: decodeURI(location.pathname),
-            distractionFreeMode: 'true',
-            language: 'zh-CN',
-            perPage: parseInt('10',10)
-        })
-        gitalk.render('comments')
-    })
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
 </script>
-
-
-
-
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 
@@ -837,6 +889,20 @@
 
         /*高亮代码块行号*/
         
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
 
         /*访问数量*/
         
@@ -861,6 +927,38 @@
 </script>
 
 <!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 18px 3px 15px 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
 
 <!--自定义样式设置-->
 <style>
@@ -928,6 +1026,24 @@
 
     /*列表样式*/
     
+    #post .pjax article .article-entry>ol, #post .pjax article .article-entry>ul, #post .pjax article>ol, #post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    #post .pjax article .article-entry li>ol, #post .pjax article .article-entry li>ul,#post .pjax article li>ol, #post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #post .pjax article .article-entry>ol>li, #post .pjax article .article-entry>ul>li,#post .pjax article>ol>li, #post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    #post .pjax article .article-entry li>ol>li, #post .pjax article .article-entry li>ul>li,#post .pjax article li>ol>li, #post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
 
     /* 背景图样式 */
     
@@ -941,23 +1057,22 @@
     
 
     
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
 </style>
 
 
 
 
 
-
-<div class="mobile-menus-out" >
-
-</div>
-<div class="mobile-menus">
-    
-    
-    
-    <a class="dynamic-menu " target="_blank"  href="https://github.com/reganzm">github</a>
-    
-</div>
 
 
 </html>
