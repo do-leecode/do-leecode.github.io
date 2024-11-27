@@ -647,12 +647,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-11-26 22:54:32'>2024-11-24 09:29</time>
+            发布时间 : <time class="date" title='最后更新: 2024-11-27 09:11:01'>2024-11-24 09:29</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:556</span>
+        <span>字数:549</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -692,9 +692,9 @@
 <h3 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h3><p>输入：s &#x3D; “cbbd”<br>输出：”bb”</p>
 <h3 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h3><p>1 &lt;&#x3D; s.length &lt;&#x3D; 1000<br>s 仅由数字和英文字母组成</p>
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这个题可以使用动态规划来解，注意观察如果一个串s[i]..s[j]是回文串,则s[i+1]..s[j-1]必定是回文串。这形成了自上而下的结构，符合动态规划的重叠子结构条件；<br>另外如果s[i+1]..s[j-1]是回文串且s[i]..s[j]也是回文串，可以找到如下的递推结构即：<br>f(i,j) &#x3D; f(i+1,j-1) &amp;&amp; s[i] &#x3D;&#x3D; s[j]。<br>这里注意边界条件，如果s长度为1，自然是回文结构，如果s长度为2且两个字符相等，也是回文结构。整理一下，有如下的递推公式：</p>
-<pre class="line-numbers language-none"><code class="language-none">f(i,j) &#x3D; f(i+1,j-1) &amp;&amp; s[i] &#x3D;&#x3D; s[j]
-f(i,i) &#x3D; true
-f(i,j) &#x3D; true &amp;&amp; j&#x3D;i+1 &amp;&amp; j-i &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token function">f</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">f</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+<span class="token function">f</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>i<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token function">f</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token operator">&amp;&amp;</span> j<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> j<span class="token operator">-</span>i <span class="token operator">=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="rust实现"><a href="#rust实现" class="headerlink" title="rust实现"></a>rust实现</h3><pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">longest_palindrome</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">String</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">let</span> len <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -760,10 +760,10 @@ f(i,j) &#x3D; true &amp;&amp; j&#x3D;i+1 &amp;&amp; j-i &#x3D; 1<span aria-hidde
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>最长回文子串</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">556</span></p>
+    <p><span class="copy-title">字数:</span><span class="post-count">549</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="reganzm">reganzm</a></p>
     <p><span class="copy-title">发布时间:</span>2024-11-24, 09:29:35</p>
-    <p><span class="copy-title">最后更新:</span>2024-11-26, 22:54:32</p>
+    <p><span class="copy-title">最后更新:</span>2024-11-27, 09:11:01</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/11/24/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" title="最长回文子串">http://do-leecode.github.io/2024/11/24/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。

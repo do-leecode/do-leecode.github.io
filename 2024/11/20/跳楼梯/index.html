@@ -647,12 +647,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-11-27 08:59:25'>2024-11-20 22:30</time>
+            发布时间 : <time class="date" title='最后更新: 2024-11-27 09:14:14'>2024-11-20 22:30</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:432</span>
+        <span>字数:429</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -708,12 +708,14 @@
 <li>有递推公式</li>
 </ul>
 <p>递推公式：</p>
-<pre class="line-numbers language-none"><code class="language-none">跳到第i格两种方式，首先跳到i-1格，下一次跳一格为第一种方式；跳到i-2格，
+<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust">
+跳到第i格两种方式，首先跳到i<span class="token operator">-</span><span class="token number">1</span>格，下一次跳一格为第一种方式；跳到i<span class="token operator">-</span><span class="token number">2</span>格，
 下一次跳两格为第二种方式。跳到第i格可以分解为这两个子问题并求和。
-F(i) &#x3D; F(i-1) + F(i-2) 
-F(1) &#x3D; 1
-f(2) &#x3D; 2
-F(i)表示跳到第i阶楼梯的方法数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token class-name">F</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token class-name">F</span><span class="token punctuation">(</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token class-name">F</span><span class="token punctuation">(</span>i<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span> 
+<span class="token class-name">F</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">2</span>
+<span class="token class-name">F</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>表示跳到第i阶楼梯的方法数
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>基于递推公式可以考虑使用dp[i+1]长度的数组存储递推过程中的状态，自下而上完成计算。</p>
 <h3 id="rust代码"><a href="#rust代码" class="headerlink" title="rust代码"></a>rust代码</h3><pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">climb_stairs</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">i32</span> <span class="token punctuation">&#123;</span>
@@ -759,10 +761,10 @@ F(i)表示跳到第i阶楼梯的方法数<span aria-hidden="true" class="line-nu
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>跳楼梯</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">432</span></p>
+    <p><span class="copy-title">字数:</span><span class="post-count">429</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="reganzm">reganzm</a></p>
     <p><span class="copy-title">发布时间:</span>2024-11-20, 22:30:11</p>
-    <p><span class="copy-title">最后更新:</span>2024-11-27, 08:59:25</p>
+    <p><span class="copy-title">最后更新:</span>2024-11-27, 09:14:14</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/" title="跳楼梯">http://do-leecode.github.io/2024/11/20/%E8%B7%B3%E6%A5%BC%E6%A2%AF/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
